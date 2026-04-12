@@ -9,7 +9,7 @@ export default function LocationSection() {
       <AnimatedSection className="max-w-sm mx-auto">
         {/* Section label */}
         <p
-          className="text-xs tracking-[0.3em] text-[#c4788a] uppercase mb-10 text-center"
+          className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase mb-10 text-center"
           style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
         >
           Location
@@ -29,48 +29,26 @@ export default function LocationSection() {
           >
             경기도 성남시 분당구 정자일로 95
           </p>
+          <p
+            className="text-xs text-[#8a8278] mt-2 leading-6"
+            style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+          >
+            초록색 건물(그린팩토리) 옆<br />
+            회색 건물(네이버 1784)로 오시면 됩니다.
+          </p>
         </div>
 
-        {/* Static map placeholder */}
-        <div className="relative rounded-sm overflow-hidden mb-4 bg-[#e8e2d9] aspect-[4/3] flex items-center justify-center">
-          {/* Grid lines to suggest a map */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-30"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#c4788a" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-            {/* Roads */}
-            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#d9b8bc" strokeWidth="3" />
-            <line x1="0" y1="55%" x2="100%" y2="55%" stroke="#d9b8bc" strokeWidth="3" />
-            <line x1="30%" y1="0" x2="30%" y2="100%" stroke="#e4c8c4" strokeWidth="1.5" />
-            <line x1="70%" y1="0" x2="70%" y2="100%" stroke="#e4c8c4" strokeWidth="1.5" />
-            <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#e4c8c4" strokeWidth="1.5" />
-            <line x1="0" y1="75%" x2="100%" y2="75%" stroke="#e4c8c4" strokeWidth="1.5" />
-          </svg>
-
-          {/* Location pin */}
-          <div className="relative z-10 flex flex-col items-center">
-            <svg width="32" height="40" viewBox="0 0 32 40" fill="none">
-              <path
-                d="M16 0C7.164 0 0 7.164 0 16c0 12 16 24 16 24s16-12 16-24C32 7.164 24.836 0 16 0z"
-                fill="#c4788a"
-              />
-              <circle cx="16" cy="16" r="6" fill="white" />
-            </svg>
-            <div className="mt-2 bg-white/90 rounded px-3 py-1 shadow-sm">
-              <p
-                className="text-xs text-[#2c2c2c] whitespace-nowrap"
-                style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)" }}
-              >
-                네이버 1784
-              </p>
-            </div>
-          </div>
+        {/* Google Maps embed */}
+        <div className="relative rounded-sm overflow-hidden mb-4 aspect-[4/3]">
+          <iframe
+            src="https://maps.google.com/maps?q=네이버+1784+성남시+분당구+정자일로+95&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, position: "absolute", inset: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         {/* Naver map button */}
@@ -78,7 +56,7 @@ export default function LocationSection() {
           href={NAVER_MAP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full py-3 border border-[#c4788a] text-center text-sm text-[#c4788a] tracking-widest hover:bg-[#c4788a] hover:text-white transition-colors duration-300 rounded-sm mb-10"
+          className="block w-full py-3 border border-[#F59E9E] text-center text-sm text-[#F59E9E] tracking-widest hover:bg-[#F59E9E] hover:text-white transition-colors duration-300 rounded-sm mb-10"
           style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
         >
           네이버 지도에서 보기
@@ -89,19 +67,19 @@ export default function LocationSection() {
           <TransportItem
             icon={<SubwayIcon />}
             title="지하철"
-            description="신분당선 정자역 1번 출구에서 도보 5분"
+            description="신분당선 정자역 3번 출구에서 도보 15분"
           />
           <div className="w-full h-px bg-[#e8e2d9]" />
           <TransportItem
             icon={<BusIcon />}
             title="버스"
-            description="정자역 정류장 하차 후 도보 5분"
+            description="정자역 3번 출구 버스 정류장에서 2번 또는 2-1번 탑승 후 네이버/미켈란쉐르빌 정류장 하차"
           />
           <div className="w-full h-px bg-[#e8e2d9]" />
           <TransportItem
             icon={<CarIcon />}
             title="자가용"
-            description="네이버 1784 지하주차장 이용 가능"
+            description="네이버 1784 지하주차장 무료 주차"
           />
         </AnimatedSection>
       </AnimatedSection>
@@ -120,7 +98,7 @@ function TransportItem({
 }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="mt-0.5 shrink-0 text-[#c4788a]">{icon}</div>
+      <div className="mt-0.5 shrink-0 text-[#F59E9E]">{icon}</div>
       <div>
         <p
           className="text-sm text-[#2c2c2c] mb-0.5"

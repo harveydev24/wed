@@ -146,7 +146,7 @@ export default function InfoSection() {
                       <div
                         className="w-8 h-8 flex items-center justify-center rounded-full text-sm"
                         style={{
-                          backgroundColor: isWedding ? "#c4788a" : "transparent",
+                          backgroundColor: isWedding ? "#F59E9E" : "transparent",
                           color: isWedding ? "#fff" : isSun ? "#c0897a" : isSat ? "#7a8fb0" : "#2c2c2c",
                           fontFamily: "var(--font-display, 'Cormorant Garamond', serif)",
                           fontWeight: isWedding ? 400 : 300,
@@ -172,9 +172,9 @@ export default function InfoSection() {
                 style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
               >
                 {countdown.past ? (
-                  <>진환, 참결이 결혼한 지 <span className="text-[#c4788a]">{countdown.days}</span>일 됐습니다.</>
+                  <>진환, 참결이 결혼한 지 <span className="text-[#F59E9E]">{countdown.days}</span>일 됐습니다.</>
                 ) : (
-                  <>진환, 참결의 결혼식이 <span className="text-[#c4788a]">{countdown.days}</span>일 남았습니다.</>
+                  <>진환, 참결의 결혼식이 <span className="text-[#F59E9E]">{countdown.days}</span>일 남았습니다.</>
                 )}
               </p>
               <div className="flex items-start gap-1">

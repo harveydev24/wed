@@ -22,7 +22,7 @@ export default function GallerySection() {
       <AnimatedSection>
         {/* Section label */}
         <p
-          className="text-xs tracking-[0.3em] text-[#c4788a] uppercase mb-10 text-center"
+          className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase mb-10 text-center"
           style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
         >
           Gallery
@@ -61,7 +61,7 @@ export default function GallerySection() {
               style={{
                 width: i === activeIndex ? "16px" : "4px",
                 height: "4px",
-                backgroundColor: i === activeIndex ? "#c4788a" : "#e8e2d9",
+                backgroundColor: i === activeIndex ? "#F59E9E" : "#e8e2d9",
               }}
             />
           ))}

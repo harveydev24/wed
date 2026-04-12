@@ -6,7 +6,7 @@ export default function GreetingSection() {
       <AnimatedSection className="max-w-sm mx-auto text-center">
         {/* Section label */}
         <p
-          className="text-xs tracking-[0.3em] text-[#c4788a] uppercase mb-8"
+          className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase mb-8"
           style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
         >
           Invitation
