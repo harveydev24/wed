@@ -1,7 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 
-const NAVER_MAP_URL =
-  "https://map.naver.com/v5/search/%EB%84%A4%EC%9D%B4%EB%B2%84%201784";
+const NAVER_MAP_URL = "https://naver.me/54LbuEe5";
 
 export default function LocationSection() {
   return (
