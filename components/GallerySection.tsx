@@ -22,7 +22,7 @@ export default function GallerySection() {
       <AnimatedSection>
         {/* Section label */}
         <p
-          className="text-xs tracking-[0.3em] text-[#9c8b6e] uppercase mb-10 text-center"
+          className="text-xs tracking-[0.3em] text-[#c4788a] uppercase mb-10 text-center"
           style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
         >
           Gallery
@@ -43,7 +43,7 @@ export default function GallerySection() {
               key={i}
               className="shrink-0 snap-center aspect-[3/4] w-[72vw] max-w-[280px] bg-[#e8e2d9] rounded-sm flex items-center justify-center"
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-[#c8bfb4]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-[#d9b8bc]">
                 <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
                 <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M21 15l-5-5L5 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -61,7 +61,7 @@ export default function GallerySection() {
               style={{
                 width: i === activeIndex ? "16px" : "4px",
                 height: "4px",
-                backgroundColor: i === activeIndex ? "#9c8b6e" : "#e8e2d9",
+                backgroundColor: i === activeIndex ? "#c4788a" : "#e8e2d9",
               }}
             />
           ))}

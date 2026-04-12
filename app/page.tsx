@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <main className="max-w-md mx-auto">
       <CoverSection />
-      <HeroSection />
       <GreetingSection />
       <InfoSection />
       <GallerySection />

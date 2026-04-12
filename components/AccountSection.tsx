@@ -38,7 +38,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-xs text-[#9c8b6e] border border-[#9c8b6e] px-2 py-0.5 rounded-sm hover:bg-[#9c8b6e] hover:text-white transition-colors duration-200"
+      className="text-xs text-[#c4788a] border border-[#c4788a] px-2 py-0.5 rounded-sm hover:bg-[#c4788a] hover:text-white transition-colors duration-200"
       style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
     >
       {copied ? "복사됨" : "복사"}

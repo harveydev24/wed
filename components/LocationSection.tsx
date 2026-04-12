@@ -9,7 +9,7 @@ export default function LocationSection() {
       <AnimatedSection className="max-w-sm mx-auto">
         {/* Section label */}
         <p
-          className="text-xs tracking-[0.3em] text-[#9c8b6e] uppercase mb-10 text-center"
+          className="text-xs tracking-[0.3em] text-[#c4788a] uppercase mb-10 text-center"
           style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
         >
           Location
@@ -40,17 +40,17 @@ export default function LocationSection() {
           >
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#9c8b6e" strokeWidth="0.5" />
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#c4788a" strokeWidth="0.5" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
             {/* Roads */}
-            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#c8bfb4" strokeWidth="3" />
-            <line x1="0" y1="55%" x2="100%" y2="55%" stroke="#c8bfb4" strokeWidth="3" />
-            <line x1="30%" y1="0" x2="30%" y2="100%" stroke="#d4cec7" strokeWidth="1.5" />
-            <line x1="70%" y1="0" x2="70%" y2="100%" stroke="#d4cec7" strokeWidth="1.5" />
-            <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#d4cec7" strokeWidth="1.5" />
-            <line x1="0" y1="75%" x2="100%" y2="75%" stroke="#d4cec7" strokeWidth="1.5" />
+            <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#d9b8bc" strokeWidth="3" />
+            <line x1="0" y1="55%" x2="100%" y2="55%" stroke="#d9b8bc" strokeWidth="3" />
+            <line x1="30%" y1="0" x2="30%" y2="100%" stroke="#e4c8c4" strokeWidth="1.5" />
+            <line x1="70%" y1="0" x2="70%" y2="100%" stroke="#e4c8c4" strokeWidth="1.5" />
+            <line x1="0" y1="30%" x2="100%" y2="30%" stroke="#e4c8c4" strokeWidth="1.5" />
+            <line x1="0" y1="75%" x2="100%" y2="75%" stroke="#e4c8c4" strokeWidth="1.5" />
           </svg>
 
           {/* Location pin */}
@@ -58,7 +58,7 @@ export default function LocationSection() {
             <svg width="32" height="40" viewBox="0 0 32 40" fill="none">
               <path
                 d="M16 0C7.164 0 0 7.164 0 16c0 12 16 24 16 24s16-12 16-24C32 7.164 24.836 0 16 0z"
-                fill="#9c8b6e"
+                fill="#c4788a"
               />
               <circle cx="16" cy="16" r="6" fill="white" />
             </svg>
@@ -78,7 +78,7 @@ export default function LocationSection() {
           href={NAVER_MAP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full py-3 border border-[#9c8b6e] text-center text-sm text-[#9c8b6e] tracking-widest hover:bg-[#9c8b6e] hover:text-white transition-colors duration-300 rounded-sm mb-10"
+          className="block w-full py-3 border border-[#c4788a] text-center text-sm text-[#c4788a] tracking-widest hover:bg-[#c4788a] hover:text-white transition-colors duration-300 rounded-sm mb-10"
           style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
         >
           네이버 지도에서 보기
@@ -120,7 +120,7 @@ function TransportItem({
 }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="mt-0.5 shrink-0 text-[#9c8b6e]">{icon}</div>
+      <div className="mt-0.5 shrink-0 text-[#c4788a]">{icon}</div>
       <div>
         <p
           className="text-sm text-[#2c2c2c] mb-0.5"
