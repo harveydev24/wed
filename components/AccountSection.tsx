@@ -49,7 +49,7 @@ function CopyButton({ text }: { text: string }) {
 export default function AccountSection() {
   return (
     <section className="py-24 px-6 bg-[#faf9f7]">
-      <AnimatedSection className="max-w-sm mx-auto">
+      <AnimatedSection className="">
         <p
           className="text-sm text-[#8a8278] text-center mb-10 leading-7"
           style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}

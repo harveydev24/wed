@@ -6,14 +6,22 @@ const NAVER_MAP_URL =
 export default function LocationSection() {
   return (
     <section className="py-24 px-6 bg-[#f4f1ec]">
-      <AnimatedSection className="max-w-sm mx-auto">
+      <AnimatedSection className="">
         {/* Section label */}
-        <p
-          className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase mb-10 text-center"
-          style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
-        >
-          Location
-        </p>
+        <div className="flex flex-col items-center gap-1 mb-10">
+          <p
+            className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase"
+            style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
+          >
+            Location
+          </p>
+          <p
+            className="text-xs text-[#F59E9E]"
+            style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+          >
+            오시는 길
+          </p>
+        </div>
 
         {/* Venue name */}
         <div className="text-center mb-8">
@@ -33,8 +41,8 @@ export default function LocationSection() {
             className="text-xs text-[#8a8278] mt-2 leading-6"
             style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
           >
-            초록색 건물(그린팩토리) 옆<br />
-            회색 건물(네이버 1784)로 오시면 됩니다.
+            그린팩토리(초록색 건물) 옆 네이버1784(회색 건물)로<br />
+            걸음해주시면 감사하겠습니다.
           </p>
         </div>
 

@@ -2,15 +2,23 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function GreetingSection() {
   return (
-    <section className="py-24 px-8 bg-[#faf9f7]">
-      <AnimatedSection className="max-w-sm mx-auto text-center">
+    <section className="py-24 px-6 bg-[#faf9f7]">
+      <AnimatedSection className="text-center">
         {/* Section label */}
-        <p
-          className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase mb-8"
-          style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
-        >
-          Invitation
-        </p>
+        <div className="flex flex-col items-center gap-1 mb-8">
+          <p
+            className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase"
+            style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
+          >
+            Invitation
+          </p>
+          <p
+            className="text-xs text-[#F59E9E]"
+            style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+          >
+            초대의 글
+          </p>
+        </div>
 
         {/* Message */}
         <div

@@ -87,15 +87,23 @@ export default function InfoSection() {
   const dayLabels = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
-    <section className="py-24 px-8 bg-[#f4f1ec]">
-      <AnimatedSection className="max-w-sm mx-auto text-center">
+    <section className="py-24 px-6 bg-[#f4f1ec]">
+      <AnimatedSection className="text-center">
         {/* Section label */}
-        <p
-          className="text-xs tracking-[0.3em] text-[#9c8b6e] uppercase mb-12"
-          style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
-        >
-          Date
-        </p>
+        <div className="flex flex-col items-center gap-1 mb-12">
+          <p
+            className="text-xs tracking-[0.3em] text-[#F59E9E] uppercase"
+            style={{ fontFamily: "var(--font-display, 'Cormorant Garamond', serif)" }}
+          >
+            Date
+          </p>
+          <p
+            className="text-xs text-[#F59E9E]"
+            style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+          >
+            예식 날짜
+          </p>
+        </div>
 
         {/* Date text */}
         <div className="mb-10">
@@ -107,7 +115,7 @@ export default function InfoSection() {
           </p>
         </div>
 
-        <div className="w-8 h-px bg-[#9c8b6e] mx-auto mb-10" />
+        <div className="w-8 h-px bg-[#F59E9E] mx-auto mb-10" />
 
         {/* Calendar */}
         <div className="mb-8">
