@@ -10,20 +10,23 @@ interface AccountInfo {
   prefix?: string;
 }
 
-const accounts: { side: string; items: AccountInfo[] }[] = [
+const accounts: { side: string; label: string; items: AccountInfo[] }[] = [
   {
     side: "신랑측",
+    label: "신랑측 계좌 확인하기",
     items: [
-      { bank: "하나은행", account: "846-910320-25107", holder: "김진환" },
-      { bank: "하나은행", account: "120-19-33550-8", holder: "김광국", prefix: "[父]" },
-      { bank: "국민은행", account: "102-21-0848-197", holder: "김민희", prefix: "[母]" },
+      { bank: "하나", account: "846-910320-25107", holder: "김진환" },
+      { bank: "하나", account: "120-19-33550-8", holder: "김광국", prefix: "[父]" },
+      { bank: "국민", account: "102-21-0848-197", holder: "김민희", prefix: "[母]" },
     ],
   },
   {
     side: "신부측",
+    label: "신부측 계좌 확인하기",
     items: [
-      { bank: "은행명", account: "000-0000-0000", holder: "이대균" },
-      { bank: "은행명", account: "000-0000-0000", holder: "이참결" },
+      { bank: "토스뱅크", account: "1000-2435-6025", holder: "이참결" },
+      { bank: "농협", account: "313-12-393620", holder: "이대균", prefix: "[父]" },
+      { bank: "신한", account: "110-177-271565", holder: "송지은", prefix: "[母]" },
     ],
   },
 ];
@@ -48,27 +51,35 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-function AccountGroup({ side, items }: { side: string; items: AccountInfo[] }) {
+function AccountGroup({ side, label, items }: { side: string; label: string; items: AccountInfo[] }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center justify-between w-full py-3 border-b border-[#e8e2d9]"
+        className="flex items-center justify-center gap-2 w-full py-3 border-b border-[#e8e2d9]"
       >
         <p
           className="text-xs text-[#8a8278] tracking-widest"
           style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
         >
-          {side}
+          {label}
         </p>
-        <span
-          className="text-xs text-[#8a8278] transition-transform duration-300"
-          style={{ display: "inline-block", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+        <svg
+          width="12"
+          height="8"
+          viewBox="0 0 12 8"
+          fill="none"
+          stroke="#c4bdb5"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="transition-transform duration-300"
+          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
         >
-          ∨
-        </span>
+          <path d="M1 1.5L6 6.5L11 1.5" />
+        </svg>
       </button>
 
       <div
@@ -118,7 +129,7 @@ export default function AccountSection() {
 
         <div className="space-y-2">
           {accounts.map((group) => (
-            <AccountGroup key={group.side} side={group.side} items={group.items} />
+            <AccountGroup key={group.side} side={group.side} label={group.label} items={group.items} />
           ))}
         </div>
       </AnimatedSection>
