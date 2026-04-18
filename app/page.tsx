@@ -4,6 +4,7 @@ import GreetingSection from "@/components/GreetingSection";
 import InfoSection from "@/components/InfoSection";
 import GallerySection from "@/components/GallerySection";
 import LocationSection from "@/components/LocationSection";
+import ContactSection from "@/components/ContactSection";
 import AccountSection from "@/components/AccountSection";
 import EndingSection from "@/components/EndingSection";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <InfoSection />
       <GallerySection />
       <LocationSection />
+      <ContactSection />
       <AccountSection />
       <EndingSection />
     </main>
