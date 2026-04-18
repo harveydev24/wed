@@ -7,14 +7,16 @@ interface AccountInfo {
   bank: string;
   account: string;
   holder: string;
+  prefix?: string;
 }
 
 const accounts: { side: string; items: AccountInfo[] }[] = [
   {
     side: "신랑측",
     items: [
-      { bank: "은행명", account: "000-0000-0000", holder: "김광국" },
-      { bank: "은행명", account: "000-0000-0000", holder: "김진환" },
+      { bank: "하나은행", account: "846-910320-25107", holder: "김진환" },
+      { bank: "하나은행", account: "120-19-33550-8", holder: "김광국", prefix: "[父]" },
+      { bank: "국민은행", account: "102-21-0848-197", holder: "김민희", prefix: "[母]" },
     ],
   },
   {
@@ -46,6 +48,62 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
+function AccountGroup({ side, items }: { side: string; items: AccountInfo[] }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center justify-between w-full py-3 border-b border-[#e8e2d9]"
+      >
+        <p
+          className="text-xs text-[#8a8278] tracking-widest"
+          style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+        >
+          {side}
+        </p>
+        <span
+          className="text-xs text-[#8a8278] transition-transform duration-300"
+          style={{ display: "inline-block", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+        >
+          ∨
+        </span>
+      </button>
+
+      <div
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: open ? `${items.length * 72}px` : "0px" }}
+      >
+        <div className="space-y-0 pt-1">
+          {items.map((item) => (
+            <div
+              key={item.holder}
+              className="flex items-center justify-between py-3 border-b border-[#e8e2d9]"
+            >
+              <div>
+                <p
+                  className="text-sm text-[#2c2c2c]"
+                  style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+                >
+                  {item.bank} {item.account}
+                </p>
+                <p
+                  className="text-xs text-[#8a8278] mt-0.5"
+                  style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+                >
+                  {item.prefix ? `${item.prefix} ` : ""}{item.holder}
+                </p>
+              </div>
+              <CopyButton text={item.account} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function AccountSection() {
   return (
     <section className="py-24 px-6 bg-[#faf9f7]">
@@ -58,40 +116,9 @@ export default function AccountSection() {
           계좌를 안내드립니다.
         </p>
 
-        <div className="space-y-8">
+        <div className="space-y-2">
           {accounts.map((group) => (
-            <div key={group.side}>
-              <p
-                className="text-xs text-[#8a8278] tracking-widest mb-4"
-                style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
-              >
-                {group.side}
-              </p>
-              <div className="space-y-3">
-                {group.items.map((item) => (
-                  <div
-                    key={item.holder}
-                    className="flex items-center justify-between py-3 border-b border-[#e8e2d9]"
-                  >
-                    <div>
-                      <p
-                        className="text-sm text-[#2c2c2c]"
-                        style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
-                      >
-                        {item.bank} {item.account}
-                      </p>
-                      <p
-                        className="text-xs text-[#8a8278] mt-0.5"
-                        style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
-                      >
-                        {item.holder}
-                      </p>
-                    </div>
-                    <CopyButton text={item.account} />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <AccountGroup key={group.side} side={group.side} items={group.items} />
           ))}
         </div>
       </AnimatedSection>
