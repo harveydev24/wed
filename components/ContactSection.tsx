@@ -6,6 +6,7 @@ interface ContactInfo {
   holder: string;
   phone: string;
   prefix?: string;
+  note?: string;
 }
 
 const contacts: { side: string; items: ContactInfo[] }[] = [
@@ -21,7 +22,7 @@ const contacts: { side: string; items: ContactInfo[] }[] = [
     side: "신부측",
     items: [
       { holder: "이참결", phone: "01062973846" },
-      { holder: "이대균", phone: "01044144949", prefix: "[父]" },
+      { holder: "이대균", phone: "01044144949", prefix: "[父]", note: "청주에서 셔틀버스 탑승을 희망하시는 분께서는 신부 아버지께 연락 부탁드립니다." },
       { holder: "송지은", phone: "01020440722", prefix: "[母]" },
     ],
   },
@@ -74,32 +75,39 @@ export default function ContactSection() {
               </p>
               <div className="space-y-0">
                 {group.items.map((item) => (
-                  <div
-                    key={item.holder}
-                    className="flex items-center justify-between py-3 border-b border-[#e8e2d9]"
-                  >
-                    <p
-                      className="text-sm text-[#2c2c2c]"
-                      style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
-                    >
-                      {item.prefix ? `${item.prefix} ` : ""}{item.holder}
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <a
-                        href={`tel:${item.phone}`}
-                        className="text-[#8a8278] hover:text-[#F59E9E] transition-colors duration-200"
-                        aria-label={`${item.holder}에게 전화하기`}
+                  <div key={item.holder} className="border-b border-[#e8e2d9]">
+                    <div className="flex items-center justify-between py-3">
+                      <p
+                        className="text-sm text-[#2c2c2c]"
+                        style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
                       >
-                        <PhoneIcon />
-                      </a>
-                      <a
-                        href={`sms:${item.phone}`}
-                        className="text-[#8a8278] hover:text-[#F59E9E] transition-colors duration-200"
-                        aria-label={`${item.holder}에게 문자하기`}
-                      >
-                        <MessageIcon />
-                      </a>
+                        {item.prefix ? `${item.prefix} ` : ""}{item.holder}
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <a
+                          href={`tel:${item.phone}`}
+                          className="text-[#8a8278] hover:text-[#F59E9E] transition-colors duration-200"
+                          aria-label={`${item.holder}에게 전화하기`}
+                        >
+                          <PhoneIcon />
+                        </a>
+                        <a
+                          href={`sms:${item.phone}`}
+                          className="text-[#8a8278] hover:text-[#F59E9E] transition-colors duration-200"
+                          aria-label={`${item.holder}에게 문자하기`}
+                        >
+                          <MessageIcon />
+                        </a>
+                      </div>
                     </div>
+                    {item.note && (
+                      <p
+                        className="text-xs text-[#8a8278] pb-2 leading-relaxed italic"
+                        style={{ fontFamily: "var(--font-body, 'Noto Serif KR', serif)", fontWeight: 300 }}
+                      >
+                        {item.note}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

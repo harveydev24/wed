@@ -88,6 +88,12 @@ export default function LocationSection() {
             title="자가용"
             description="네이버 1784 지하주차장 무료 주차"
           />
+          <div className="w-full h-px bg-[#e8e2d9]" />
+          <TransportItem
+            icon={<ShuttleIcon />}
+            title="셔틀버스"
+            description="청주 ↔ 예식장 왕복 셔틀버스 운행 예정 · 탑승 희망 시 신부 아버지께 연락 부탁드립니다."
+          />
         </AnimatedSection>
       </AnimatedSection>
     </section>
@@ -143,6 +149,19 @@ function BusIcon() {
       <circle cx="5.5" cy="15.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
       <circle cx="12.5" cy="15.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
       <path d="M5.5 14v-2M12.5 14v-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ShuttleIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <rect x="1" y="5" width="14" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="4.5" cy="15.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="11.5" cy="15.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M1 9h14" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M12 2l3 1.5L12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15 3.5H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
